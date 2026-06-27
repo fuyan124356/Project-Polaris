@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROJECT POLARIS - Growth OS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">P</div>
+        <div>
+          <p class="eyebrow">PROJECT POLARIS</p>
+          <h1>Growth OS</h1>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#dashboard" class="nav-item active">Dashboard</a>
+        <a href="#tasks" class="nav-item">Tasks</a>
+        <a href="#skills" class="nav-item">Skills</a>
+        <a href="#projects" class="nav-item">Projects</a>
+      </nav>
+
+      <div class="student-card">
+        <span class="status-dot"></span>
+        <div>
+          <strong>TA Career Track</strong>
+          <p>UE / C++ / Art / English</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Daily execution cockpit</p>
+          <h2>Build visible progress today.</h2>
+        </div>
+        <button id="resetDataBtn" class="ghost-button" type="button">Reset Data</button>
+      </header>
+
+      <section id="dashboard" class="grid dashboard-grid">
+        <article class="card hero-card">
+          <div class="level-ring">
+            <span id="levelValue">1</span>
+            <small>LEVEL</small>
+          </div>
+          <div class="hero-info">
+            <p class="eyebrow">XP progression</p>
+            <h3 id="xpLabel">0 / 100 XP</h3>
+            <div class="progress-track large">
+              <div id="xpBar" class="progress-fill xp-fill"></div>
+            </div>
+            <p class="muted">Every completed task moves the system forward.</p>
+          </div>
+        </article>
+
+        <article class="card stat-card">
+          <p class="eyebrow">Today</p>
+          <h3 id="todayProgressLabel">0 / 3 tasks</h3>
+          <div class="progress-track">
+            <div id="todayProgressBar" class="progress-fill"></div>
+          </div>
+        </article>
+
+        <article class="card stat-card">
+          <p class="eyebrow">Focus</p>
+          <h3 id="focusLabel">UE Rain Room Scene</h3>
+          <p class="muted">Default production project</p>
+        </article>
+
+        <article class="card stat-card">
+          <p class="eyebrow">Completed</p>
+          <h3 id="completedCount">0</h3>
+          <p class="muted">Tasks finished in this save</p>
+        </article>
+      </section>
+
+      <section id="tasks" class="workspace">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Task system</p>
+            <h2>Daily Missions</h2>
+          </div>
+        </div>
+
+        <form id="taskForm" class="task-form card">
+          <input id="taskTitleInput" type="text" placeholder="Add a new task" required>
+          <select id="taskSkillInput" aria-label="Related skill">
+            <option value="UE">UE</option>
+            <option value="C++">C++</option>
+            <option value="Art">Art</option>
+            <option value="English">English</option>
+          </select>
+          <input id="taskXpInput" type="number" min="5" max="100" step="5" value="25" aria-label="XP reward">
+          <button type="submit">Add Task</button>
+        </form>
+
+        <div id="taskList" class="task-list"></div>
+      </section>
+
+      <section id="skills" class="workspace">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Skill system</p>
+            <h2>Growth Map</h2>
+          </div>
+        </div>
+        <div id="skillsGrid" class="grid skills-grid"></div>
+      </section>
+
+      <section id="projects" class="workspace">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Project system</p>
+            <h2>Production Board</h2>
+          </div>
+        </div>
+
+        <article class="card project-card">
+          <div class="project-main">
+            <div>
+              <p class="eyebrow">Active UE project</p>
+              <h3 id="projectName">UE Rain Room Scene</h3>
+            </div>
+            <a id="githubLink" href="#" target="_blank" rel="noreferrer">GitHub Placeholder</a>
+          </div>
+          <p id="projectDescription" class="project-description"></p>
+          <label class="range-label" for="projectProgressInput">
+            <span>Project Progress</span>
+            <strong id="projectProgressLabel">0%</strong>
+          </label>
+          <input id="projectProgressInput" type="range" min="0" max="100" step="5">
+          <div class="progress-track">
+            <div id="projectProgressBar" class="progress-fill project-fill"></div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
