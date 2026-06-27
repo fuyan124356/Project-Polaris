@@ -32,7 +32,8 @@ body {
 
 button,
 input,
-select {
+select,
+textarea {
   font: inherit;
 }
 
@@ -161,6 +162,13 @@ button {
 
 .topbar h2 {
   font-size: clamp(26px, 4vw, 42px);
+}
+
+.topbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
 .ghost-button {
@@ -414,6 +422,116 @@ button {
   padding: 22px;
 }
 
+.memory-intro {
+  padding: 18px 20px;
+  margin-bottom: 16px;
+}
+
+.memory-intro p {
+  max-width: 860px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.memory-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.8fr);
+  gap: 16px;
+}
+
+.memory-cards {
+  display: grid;
+  gap: 16px;
+}
+
+.memory-card {
+  padding: 18px;
+}
+
+.memory-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 16px;
+}
+
+.memory-card-header h3 {
+  font-size: 24px;
+}
+
+.export-button {
+  flex: 0 0 auto;
+}
+
+.memory-description {
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 12px 0 14px;
+}
+
+.memory-card textarea {
+  width: 100%;
+  min-height: 220px;
+  resize: vertical;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #0d1117;
+  padding: 14px;
+  line-height: 1.55;
+  outline: none;
+}
+
+.memory-card textarea:focus {
+  border-color: var(--accent-2);
+}
+
+.workflow-card {
+  padding: 18px;
+  align-self: start;
+}
+
+.workflow {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.workflow-step {
+  width: 100%;
+  min-height: 46px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #0d1117;
+  padding: 10px 12px;
+  font-weight: 750;
+}
+
+.workflow-arrow {
+  width: 2px;
+  height: 24px;
+  background: linear-gradient(180deg, var(--accent-2), var(--accent));
+  position: relative;
+}
+
+.workflow-arrow::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: translateX(-50%) rotate(45deg);
+}
+
 .project-main {
   display: flex;
   justify-content: space-between;
@@ -466,7 +584,7 @@ input[type="range"] {
   }
 
   .nav {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 
   .student-card {
@@ -474,7 +592,8 @@ input[type="range"] {
   }
 
   .dashboard-grid,
-  .skills-grid {
+  .skills-grid,
+  .memory-layout {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -490,8 +609,17 @@ input[type="range"] {
     flex-direction: column;
   }
 
+  .topbar-actions {
+    justify-content: stretch;
+  }
+
+  .topbar-actions .ghost-button {
+    flex: 1 1 160px;
+  }
+
   .dashboard-grid,
-  .skills-grid {
+  .skills-grid,
+  .memory-layout {
     grid-template-columns: 1fr;
   }
 
