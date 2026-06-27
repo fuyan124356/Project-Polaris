@@ -22,6 +22,7 @@
         <a href="#tasks" class="nav-item">Tasks</a>
         <a href="#skills" class="nav-item">Skills</a>
         <a href="#projects" class="nav-item">Projects</a>
+        <a href="#ai-memory" class="nav-item">AI Memory</a>
       </nav>
 
       <div class="student-card">
@@ -39,7 +40,10 @@
           <p class="eyebrow">Daily execution cockpit</p>
           <h2>Build visible progress today.</h2>
         </div>
-        <button id="resetDataBtn" class="ghost-button" type="button">Reset Data</button>
+        <div class="topbar-actions">
+          <button id="translateBtn" class="ghost-button" type="button">中文</button>
+          <button id="resetDataBtn" class="ghost-button" type="button">Reset Data</button>
+        </div>
       </header>
 
       <section id="dashboard" class="grid dashboard-grid">
@@ -138,6 +142,69 @@
             <div id="projectProgressBar" class="progress-fill project-fill"></div>
           </div>
         </article>
+      </section>
+
+      <section id="ai-memory" class="workspace">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">AI Memory</p>
+            <h2>Continuity Layer</h2>
+          </div>
+        </div>
+
+        <article class="card memory-intro">
+          <p>
+            AI Memory helps different AI models continue the same long-term journey by preserving goals,
+            current learning state, and collaboration rules so each new conversation can start with context.
+          </p>
+        </article>
+
+        <div class="memory-layout">
+          <div class="memory-cards">
+            <article class="card memory-card">
+              <div class="memory-card-header">
+                <div>
+                  <p class="eyebrow">Card A</p>
+                  <h3>MASTER_CONTEXT.md</h3>
+                </div>
+                <button id="exportMasterBtn" class="ghost-button export-button" type="button">Export</button>
+              </div>
+              <p class="memory-description">
+                Long-term identity, goals, learning style, career direction and AI collaboration rules.
+                Updated only occasionally.
+              </p>
+              <textarea id="masterContextInput" spellcheck="false"></textarea>
+            </article>
+
+            <article class="card memory-card">
+              <div class="memory-card-header">
+                <div>
+                  <p class="eyebrow">Card B</p>
+                  <h3>CURRENT_STATE.md</h3>
+                </div>
+                <button id="exportCurrentBtn" class="ghost-button export-button" type="button">Export</button>
+              </div>
+              <p class="memory-description">
+                Current learning stage, current projects, current focus and next milestones.
+                Updated weekly.
+              </p>
+              <textarea id="currentStateInput" spellcheck="false"></textarea>
+            </article>
+          </div>
+
+          <article class="card workflow-card">
+            <p class="eyebrow">Workflow</p>
+            <div class="workflow">
+              <div class="workflow-step">MASTER_CONTEXT</div>
+              <div class="workflow-arrow"></div>
+              <div class="workflow-step">CURRENT_STATE</div>
+              <div class="workflow-arrow"></div>
+              <div class="workflow-step">New AI Conversation</div>
+              <div class="workflow-arrow"></div>
+              <div class="workflow-step">AI immediately understands the user.</div>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
   </div>
